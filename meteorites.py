@@ -11,6 +11,7 @@ print(f)
 #transforming JSON to CSV
 df = pd.DataFrame.from_dict(data, orient='columns') 
 
+#Dropping NaN values from Latitude and Longitude
 df = df.dropna(subset=['reclat', 'reclong'])
 
 #Selecting only Latitude
@@ -30,7 +31,6 @@ map = folium.Map(location=[37.0902, -95.7129], zoom_start=1, min_zoom=2,titles="
 fgm = folium.FeatureGroup(name="Metorites")
 
 #for loop to add all values from the csv file
-
 for lt,ln , nm in zip(lat,lon,name):
 	fgm.add_child(folium.CircleMarker(location=[lt,ln], radius= 6, popup=nm, color='brown', fill_color='red'))
 
@@ -42,8 +42,11 @@ fgp.add_child(folium.GeoJson(data=open('world.json','r',encoding="utf-8-sig").re
 	else 'orange' if 10000000 <= x['properties']['POP2005']< 20000000 else 'red'}))
 
 
+#Creating Layer control
 map.add_child(fgp)
 map.add_child(fgm)
 map.add_child(folium.LayerControl())
+
+
 #creating the HTML map
 map.save("Map1.html")
