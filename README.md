@@ -1,9 +1,9 @@
 # Python-Webmap
-Meteorite and population Webmaps with Python and Folium.
+Meteorite landing and world population Webmaps with Python and Folium.
 
-Meteorite data set: [Dataset](https://catalog.data.gov/dataset/meteorite-landings-api)
+Meteorite landing data set: [Dataset](https://catalog.data.gov/dataset/meteorite-landings-api)
 
-Population dataset: [Dataset](https://data.world/edmadrigal/world-population-json)
+World population dataset: [Dataset](https://data.world/edmadrigal/world-population-json)
 
 
 ## Meteorite Visalization
